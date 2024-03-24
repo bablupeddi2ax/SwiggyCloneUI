@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="10dp"
-    android:padding="18dp"
-    android:layout_width="390dp"
-    android:layout_height="730dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="12dp"
+    android:background="#f9e8f1"
+    android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="#f9e8f1"
+
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,9 +34,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <ImageView
-                        android:src="@drawable/mouseclicker"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:src="@drawable/arrowright"
+                        android:rotation="330"
+                        android:layout_width="28dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_height="28dp"
                         android:contentDescription="@string/arrow_pointing" />
                     <TextView
                         android:id="@+id/txtLocation"
@@ -66,11 +71,14 @@
 
         <LinearLayout
             android:id="@+id/llSearchBar"
+            android:nestedScrollingEnabled="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/search_bar_bg"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_gravity="start|top"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -97,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="20dp"
-                android:background="@color/white"
+                android:background="#fff"
                 android:src="@drawable/search" />
 
             <Button
@@ -110,28 +118,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="@color/white"
+                android:background="#fff "
                 android:src="@drawable/mic" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="340dp"
-            android:layout_height="180dp"
+            android:layout_height="160dp"
             android:layout_marginStart="10dp"
+            android:background="@drawable/main_color_bg"
             android:orientation="horizontal">
+
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Happy Holiiii"
-                    android:textSize="35sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="35sp" />
+
                 <TextView
-                    android:text="Celebrate with SwiggyCole"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="Celebrate with SwiggyCole" />
             </LinearLayout>
+
             <ImageView
                 android:layout_width="156dp"
                 android:layout_height="149dp"
@@ -142,9 +156,9 @@
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/card_color_bg"
             android:columnCount="2"
-
-            android:padding="16dp"
+            android:padding="8dp"
             android:rowCount="2">
 
             <androidx.cardview.widget.CardView
@@ -245,8 +259,7 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="4dp">
 
@@ -291,8 +304,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+
                 app:cardCornerRadius="20dp"
                 app:cardElevation="4dp">
 
@@ -331,8 +344,14 @@
 
             </androidx.cardview.widget.CardView>
         </GridLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_color_bg"
+            android:orientation="vertical">
         <TextView
-            android:text="-FEATURED FOR YOU-"
+            android:text="@string/featured_for_you"
+            android:background="#fff"
             android:textSize="30sp"
             android:textAlignment="center"
             android:layout_width="match_parent"
@@ -340,8 +359,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"/>
+        </LinearLayout>
     </LinearLayout>
 
 
